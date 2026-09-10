@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Andina ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FALLING HEARTS -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="music/lagu.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung pemutar audio.
+    </audio>
+
+    <!-- =====================================================
+         PAGE 1 - ENVELOPE
+    ====================================================== -->
+    <section class="page page-opening active" id="page1">
+
+        <div class="opening-content">
+
+            <p class="opening-small">
+                A LITTLE SURPRISE FOR
+            </p>
+
+            <h1>
+                Someone Special ❤️
+            </h1>
+
+            <div class="envelope-wrapper" id="envelopeWrapper">
+
+                <div class="envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div class="letter-paper">
+                        <div class="letter-paper-inner">
+                            <span>For You</span>
+                            <strong>❤️</strong>
+                        </div>
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="envelope-seal">
+                        ♥
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="envelope-hint" id="envelopeHint">
+                Klik amplopnya ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 2 - CALENDAR
+    ====================================================== -->
+    <section class="page" id="page2">
+
+        <div class="calendar-section">
+
+            <p class="section-small">
+                A SPECIAL DAY
+            </p>
+
+            <h1>
+                September 2026
+            </h1>
+
+            <p class="calendar-subtitle">
+                Karena ada satu tanggal yang sangat spesial bagiku...
+            </p>
+
+            <div class="calendar-card">
+
+                <div class="calendar-header">
+                    <span>SEPTEMBER</span>
+                    <strong>2026</strong>
+                </div>
+
+                <div class="calendar-weekdays">
+                    <span>MIN</span>
+                    <span>SEN</span>
+                    <span>SEL</span>
+                    <span>RAB</span>
+                    <span>KAM</span>
+                    <span>JUM</span>
+                    <span>SAB</span>
+                </div>
+
+                <div class="calendar-days">
+
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+
+                    <span class="special-day">
+                    <span class="special-number">11</span>
+                    <span class="day-heart">♡</span>
+                    </span>
+                    <span>12</span>
+
+                    <span>13</span>
+                    <span>14</span>
+                    <span>15</span>
+                    <span>16</span>
+                    <span>17</span>
+                    <span>18</span>
+                    <span>19</span>
+
+                    <span>20</span>
+                    <span>21</span>
+                    <span>22</span>
+                    <span>23</span>
+                    <span>24</span>
+                    <span>25</span>
+                    <span>26</span>
+
+                    <span>27</span>
+                    <span>28</span>
+                    <span>29</span>
+                    <span>30</span>
+
+                </div>
+
+                <div class="birthday-date">
+                    <span>11</span>
+                    <div>
+                        <small>SEPTEMBER</small>
+                        <strong>YOUR SPECIAL DAY</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="main-button" onclick="goToPage(3)">
+                Lanjut ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 3 - LETTER
+    ====================================================== -->
+    <section class="page" id="page3">
+
+        <div class="letter-section">
+
+            <p class="section-small">
+                A LETTER FOR YOU
+            </p>
+
+            <div class="letter-card">
+
+                <div class="letter-top">
+                    <span>♥</span>
+                </div>
+
+                <div class="typing-area" id="typingArea">
+
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+                    <p class="typing-line"></p>
+
+                </div>
+
+                <button
+                    class="skip-button"
+                    id="skipButton"
+                    onclick="skipTyping()">
+                    Skip →
+                </button>
+
+                <div class="letter-bottom">
+                    With love, ❤️
+                </div>
+
+            </div>
+
+            <div class="page-navigation">
+
+                <button class="secondary-button" onclick="goToPage(2)">
+                    ← Kembali
+                </button>
+
+                <button class="main-button" onclick="goToPage(4)">
+                    Lanjut ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 4 - MEMORIES SLIDESHOW
+    ====================================================== -->
+    <section class="page" id="page4">
+
+        <div class="memories-section">
+
+            <p class="section-small">
+                OUR LITTLE MEMORIES
+            </p>
+
+            <h1>
+                Moments With You
+            </h1>
+
+            <p class="memories-subtitle">
+                Satu foto, satu cerita, satu kenangan. ❤️
+            </p>
+
+            <div class="photo-slider">
+
+                <div class="photo-frame">
+
+                    <img
+                        id="memoryImage"
+                        src="images/foto1.jpeg"
+                        alt="Our memory">
+
+                </div>
+
+                <div class="photo-counter" id="photoCounter">
+                    1 / 8
+                </div>
+
+                <div class="memory-info">
+
+                    <h2 id="memoryTitle">
+                        The Beginning
+                    </h2>
+
+                    <div class="memory-divider">
+                        ✦
+                    </div>
+
+                    <p id="memoryDescription">
+                        Salah satu momen yang ingin selalu aku ingat. ❤️
+                    </p>
+
+                </div>
+
+                <div class="slider-controls">
+
+                    <button
+                        class="slider-arrow"
+                        onclick="previousPhoto()"
+                        aria-label="Foto sebelumnya">
+                        ←
+                    </button>
+
+                    <div
+                        class="slider-dots"
+                        id="sliderDots">
+                    </div>
+
+                    <button
+                        class="slider-arrow"
+                        onclick="nextPhoto()"
+                        aria-label="Foto berikutnya">
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="page-navigation">
+
+                <button class="secondary-button" onclick="goToPage(3)">
+                    ← Kembali
+                </button>
+
+                <button class="main-button" onclick="goToPage(5)">
+                    Lanjut ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 5 - DIGITAL BOOK
+    ====================================================== -->
+    <section class="page" id="page5">
+
+        <div class="book-container">
+
+            <!-- COVER -->
+            <div class="book-page book-cover active-book">
+
+                <div class="book-decoration">
+                    ❤️
+                </div>
+
+                <p class="book-small">
+                    A LITTLE STORY ABOUT US
+                </p>
+
+                <h1>
+                    Our Story
+                </h1>
+
+                <div class="book-line"></div>
+
+                <p class="book-subtitle">
+                    For Andina Septiana
+                </p>
+
+                <p class="book-date">
+                    September 11, 2026
+                </p>
+
+                <div class="book-heart">
+                    ♥
+                </div>
+
+                <button
+                    onclick="nextBookPage()"
+                    class="book-button">
+                    Open our story →
+                </button>
+
+            </div>
+
+
+            <!-- BOOK PAGE 1 -->
+            <div class="book-page">
+
+                <span class="chapter">
+                    CHAPTER 01
+                </span>
+
+                <h2>
+                    Ternyata kita sudah melewati sejauh ini.
+                </h2>
+
+                <div class="book-divider">
+                    ✦
+                </div>
+
+                <p>
+                    Kalau dipikir-pikir lagi, ternyata banyak sekali
+                    hal yang sudah kita lewati bersama.
+                </p>
+
+                <p>
+                    Ada hari yang dipenuhi tawa, ada juga hari
+                    yang terasa begitu berat.
+                </p>
+
+                <p>
+                    Tapi dari semuanya itu, aku bersyukur karena
+                    kita masih memilih untuk tetap bersama. ❤️
+                </p>
+
+                <div class="book-page-number">
+                    01
+                </div>
+
+                <button
+                    onclick="nextBookPage()"
+                    class="book-button">
+                    Next →
+                </button>
+
+            </div>
+
+
+            <!-- BOOK PAGE 2 -->
+            <div class="book-page">
+
+                <span class="chapter">
+                    CHAPTER 02
+                </span>
+
+                <h2>
+                    We've had good days...
+                </h2>
+
+                <div class="book-divider">
+                    ✦
+                </div>
+
+                <p>
+                    We've had good days, beautiful moments,
+                    and memories that I never want to forget.
+                </p>
+
+                <p>
+                    We've also had difficult days, misunderstandings,
+                    and moments where everything didn't feel easy.
+                </p>
+
+                <p>
+                    But somehow, we're still here.
+                </p>
+
+                <div class="book-page-number">
+                    02
+                </div>
+
+                <button
+                    onclick="nextBookPage()"
+                    class="book-button">
+                    Next →
+                </button>
+
+            </div>
+
+
+            <!-- BOOK PAGE 3 -->
+            <div class="book-page">
+
+                <span class="chapter">
+                    CHAPTER 03
+                </span>
+
+                <h2>
+                    And I still choose you.
+                </h2>
+
+                <div class="book-divider">
+                    ✦
+                </div>
+
+                <p>
+                    Mungkin perjalanan kita belum sempurna.
+                </p>
+
+                <p>
+                    Tapi aku percaya, selama kita mau saling menjaga,
+                    saling memahami, dan saling memperjuangkan...
+                </p>
+
+                <p class="book-special">
+                    Kita masih punya begitu banyak cerita
+                    untuk ditulis bersama. ❤️
+                </p>
+
+                <div class="book-page-number">
+                    03
+                </div>
+
+                <button
+                    onclick="nextBookPage()"
+                    class="book-button">
+                    Next →
+                </button>
+
+            </div>
+
+
+            <!-- BOOK PAGE 4 -->
+            <div class="book-page">
+
+                <span class="chapter">
+                    CHAPTER 04
+                </span>
+
+                <div class="book-highlight">
+
+                    <p>
+                        So, let's create more memories,
+                        more stories, more laughter,
+                        and more beautiful moments together. ❤️
+                    </p>
+
+                </div>
+
+                <p>
+                    Aku ingin suatu hari nanti kita bisa melihat
+                    kembali semua perjalanan ini dan tersenyum
+                    karena ternyata kita berhasil melewatinya.
+                </p>
+
+                <p>
+                    Bukan karena semuanya mudah,
+                    tetapi karena kita memilih untuk tidak menyerah.
+                </p>
+
+                <div class="book-page-number">
+                    04
+                </div>
+
+                <button
+                    onclick="nextBookPage()"
+                    class="book-button">
+                    Next →
+                </button>
+
+            </div>
+
+
+            <!-- FINAL BOOK PAGE -->
+            <div class="book-page final-book-page">
+
+                <div class="final-book-content">
+
+                    <div class="final-book-heart">
+                        ❤️
+                    </div>
+
+                    <h2>
+                        This is not the end of our story...
+                    </h2>
+
+                    <div class="book-divider">
+                        ✦
+                    </div>
+
+                    <p class="big-book-text">
+                        This is just the beginning.
+                    </p>
+
+                    <p>
+                        Happy Birthday, sayangku cantikkk. 🥰💗
+                    </p>
+
+                    <p>
+                        Semoga semua hal baik selalu menemukan
+                        jalan menuju kamu.
+                    </p>
+
+                    <p>
+                        Dan semoga aku masih bisa berada di sampingmu
+                        untuk melihat semua cerita indah itu. ❤️
+                    </p>
+
+                    <div class="forever">
+                        Forever yours, ❤️
+                    </div>
+
+                    <button
+                        onclick="restartBook()"
+                        class="book-button">
+                        Read Again ↻
+                    </button>
+
+                </div>
+
+                <div class="book-page-number">
+                    05
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        let currentPage = 1;
+
+        const bgMusic = document.getElementById("bgMusic");
+
+
+        /* =====================================================
+           MUSIC
+        ====================================================== */
+
+        function playMusic() {
+            if (bgMusic) {
+                bgMusic.volume = 0.45;
+
+                bgMusic.play().catch(() => {
+                    // Browser dapat memblokir autoplay.
+                    // Musik akan dimainkan setelah user melakukan klik.
+                });
+            }
+        }
+
+        document.addEventListener("click", function () {
+            playMusic();
+        }, { once: true });
+
+
+        /* =====================================================
+           PAGE NAVIGATION
+        ====================================================== */
+
+        function goToPage(pageNumber) {
+
+            const current = document.getElementById(
+                "page" + currentPage
+            );
+
+            const next = document.getElementById(
+                "page" + pageNumber
+            );
+
+            if (!next || currentPage === pageNumber) {
+                return;
+            }
+
+            current.classList.remove("active");
+
+            setTimeout(() => {
+
+                next.classList.add("active");
+
+                currentPage = pageNumber;
+
+                if (pageNumber === 3) {
+                    startTyping();
+                }
+
+                if (pageNumber === 4) {
+                    resetSlideshow();
+                }
+
+            }, 150);
+
+        }
+
+
+        /* =====================================================
+           ENVELOPE
+        ====================================================== */
+
+        const envelopeWrapper =
+            document.getElementById("envelopeWrapper");
+
+        const envelopeHint =
+            document.getElementById("envelopeHint");
+
+        let envelopeOpened = false;
+
+        envelopeWrapper.addEventListener("click", function () {
+
+            if (envelopeOpened) {
+                return;
+            }
+
+            envelopeOpened = true;
+
+            envelopeWrapper.classList.add("opened");
+
+            envelopeHint.textContent =
+                "Untuk kamu yang paling spesial ❤️";
+
+            playMusic();
+
+            setTimeout(() => {
+                goToPage(2);
+            }, 1500);
+
+        });
+
+
+        /* =====================================================
+           FALLING HEARTS
+        ====================================================== */
+
+        const heartsContainer =
+            document.getElementById("heartsContainer");
+
+        function createHeart() {
+
+            const heart = document.createElement("span");
+
+            heart.className = "falling-heart";
+
+            heart.innerHTML = "♥";
+
+            heart.style.left =
+                Math.random() * 100 + "%";
+
+            heart.style.animationDuration =
+                (5 + Math.random() * 5) + "s";
+
+            heart.style.animationDelay =
+                Math.random() * 2 + "s";
+
+            heart.style.fontSize =
+                (10 + Math.random() * 14) + "px";
+
+            heart.style.opacity =
+                0.15 + Math.random() * 0.35;
+
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 500);
+
+
+        /* =====================================================
+           TYPING LETTER
+        ====================================================== */
+
+        const letterTexts = [
+
+            "HAII SAYANGKU CANTIKKK ❤️",
+
+            "SELAMAT ULANG TAHUN SAYANGKUU ❤️",
+
+            "Aku harap hari ini memberimu banyak kebahagiaan dan kesenangan, aku gabisa mendeskripsikan betapa berartinya kamu bagi aku🥺. Kamu adalah manusia terbaik yg pernah aku temuin sampe saat ini🥰💗.",
+
+            "Makasih banyak sudah hadir dan menemaniku sepanjang perjalanan ini, semoga kita tetep bersama sampai kapanpun, makasih sudah tidak meninggalkan dan percaya sama aku selama ini💗💗.",
+
+            "Susah banget ya jalan kita🥹 tapi satu hal yang aku percaya, kita bisa melaluinya bareng-bareng dan mendapati hal yg luar biasa baiknya didepan nanti💗💗.",
+
+            "Semoga Allah selalu memudahkan jalanmu, melancarkan segala urusanmu, melancarkan rezekimu, mengabulkan seluruh permintaanmu😘🥰.",
+
+            "Panjang umur, sehat selalu, dijauhkan dari segala penyakit dan marabahaya.",
+
+            "Semoga perasaan kamu gapernah berubah sedikitpun. Tetep sabar sama aku, tetep jadi orang baik, dan tetap kuat ditengah masalah apapun yg akan datang kedepannya!🥺💗💗",
+
+            "Mungkin aku bukan laki-laki pertama yang pernah membuatmu bahagia. Mungkin juga aku bukan yang pertama hadir dalam cerita hidupmu.",
+
+            "But I want to be the one who gives you the love you truly deserve.",
+
+            "To be someone who will always be there for you, protect you, appreciate you, and make you feel like the most precious woman in my life. ✨❤️",
+
+            "Aku minta maaf kalo saat ini aku belum bisa ngasih apa-apa buat kamu. Aku ngerasa bersalah banget karna dihari spesialmu aku gabisa ngasih apa-apa.",
+
+            "Aku janji bakal usahain buat kamu senang walaupun engga seberapa yaa sayangku cantik🥺🥰.",
+
+            "Sekali lagi, SELAMAT ULANG TAHUN SAYANGKU CANTIKKK 🥰💗💗💗",
+
+            "I LOVE YOU SO MUCH, MORE THAN WORDS COULD EVER EXPLAIN, SAYANGKU CANTIKKK 🥰💗💗💗"
+
+        ];
+
+        let typingStarted = false;
+        let typingSkipped = false;
+
+        const typingLines =
+            document.querySelectorAll(".typing-line");
+
+        const skipButton =
+            document.getElementById("skipButton");
+
+
+        function getTypingSpeed(text) {
+
+            if (
+                text.includes("SELAMAT ULANG TAHUN")
+            ) {
+                return 70;
+            }
+
+            if (
+                text.includes("I LOVE YOU")
+            ) {
+                return 65;
+            }
+
+            return 25;
+        }
+
+
+        function startTyping() {
+
+            if (typingStarted) {
+                return;
+            }
+
+            typingStarted = true;
+            typingSkipped = false;
+
+            typingLines.forEach(line => {
+                line.textContent = "";
+                line.classList.remove("typing-done");
+            });
+
+            skipButton.style.display = "inline-flex";
+
+            typeParagraph(0);
+        }
+
+
+        function typeParagraph(index) {
+
+            if (typingSkipped) {
+                return;
+            }
+
+            if (index >= letterTexts.length) {
+
+                finishTyping();
+
+                return;
+            }
+
+            const line = typingLines[index];
+            const text = letterTexts[index];
+
+            let characterIndex = 0;
+
+            line.classList.add("typing-active");
+
+            function typeCharacter() {
+
+                if (typingSkipped) {
+                    return;
+                }
+
+                if (characterIndex < text.length) {
+
+                    line.textContent +=
+                        text.charAt(characterIndex);
+
+                    characterIndex++;
+
+                    setTimeout(
+                        typeCharacter,
+                        getTypingSpeed(text)
+                    );
+
+                } else {
+
+                    line.classList.remove("typing-active");
+                    line.classList.add("typing-done");
+
+                    setTimeout(() => {
+                        typeParagraph(index + 1);
+                    }, 180);
+
+                }
+
+            }
+
+            typeCharacter();
+        }
+
+
+        function skipTyping() {
+
+            typingSkipped = true;
+
+            typingLines.forEach((line, index) => {
+
+                line.textContent =
+                    letterTexts[index];
+
+                line.classList.remove("typing-active");
+
+                line.classList.add("typing-done");
+
+            });
+
+            finishTyping();
+        }
+
+
+        function finishTyping() {
+
+            skipButton.style.display = "none";
+        }
+
+
+        /* =====================================================
+           MEMORIES SLIDESHOW
+        ====================================================== */
+
+        const memories = [
+
+            {
+                image: "images/foto1.jpeg",
+                title: "The Beginning",
+                description:
+                    "Salah satu momen yang ingin selalu aku ingat. ❤️"
+            },
+
+            {
+                image: "images/foto2.jpeg",
+                title: "One Of My Favorites",
+                description:
+                    "Entah kenapa foto ini selalu bikin aku senyum. 🥰"
+            },
+
+            {
+                image: "images/foto3.jpeg",
+                title: "A Little Moment",
+                description:
+                    "Momen kecil yang ternyata punya arti besar. ❤️"
+            },
+
+            {
+                image: "images/foto4.jpeg",
+                title: "Just Us",
+                description:
+                    "Sesederhana ini, tapi selalu terasa spesial. 🥹"
+            },
+
+            {
+                image: "images/foto5.jpeg",
+                title: "Another Memory",
+                description:
+                    "Semoga momen seperti ini terus bertambah. 💗"
+            },
+
+            {
+                image: "images/foto6.jpeg",
+                title: "With You",
+                description:
+                    "Karena bersamamu, hal sederhana terasa berbeda."
+            },
+
+            {
+                image: "images/foto7.jpeg",
+                title: "One More Story",
+                description:
+                    "Satu foto, satu cerita, satu kenangan. ❤️"
+            },
+
+            {
+                image: "images/foto8.jpeg",
+                title: "Forever Remembered",
+                description:
+                    "And I hope we make many more memories together. ✨"
+            }
+
+        ];
+
+        let currentPhoto = 0;
+
+        const memoryImage =
+            document.getElementById("memoryImage");
+
+        const memoryTitle =
+            document.getElementById("memoryTitle");
+
+        const memoryDescription =
+            document.getElementById("memoryDescription");
+
+        const photoCounter =
+            document.getElementById("photoCounter");
+
+        const sliderDots =
+            document.getElementById("sliderDots");
+
+        memoryImage.addEventListener("click", function () {
+            nextPhoto();
+            });
+
+
+        function createSliderDots() {
+
+            sliderDots.innerHTML = "";
+
+            memories.forEach((_, index) => {
+
+                const dot =
+                    document.createElement("button");
+
+                dot.className =
+                    "slider-dot";
+
+                if (index === 0) {
+                    dot.classList.add("active");
+                }
+
+                dot.setAttribute(
+                    "aria-label",
+                    "Foto " + (index + 1)
+                );
+
+                dot.addEventListener("click", () => {
+                    showPhoto(index);
+                });
+
+                sliderDots.appendChild(dot);
+
+            });
+
+        }
+
+
+        function showPhoto(index) {
+
+            if (index < 0) {
+                index = memories.length - 1;
+            }
+
+            if (index >= memories.length) {
+                index = 0;
+            }
+
+            currentPhoto = index;
+
+            const memory =
+                memories[currentPhoto];
+
+            memoryImage.classList.add("changing");
+
+            setTimeout(() => {
+
+                memoryImage.src =
+                    memory.image;
+
+                memoryImage.alt =
+                    memory.title;
+
+                memoryTitle.textContent =
+                    memory.title;
+
+                memoryDescription.textContent =
+                    memory.description;
+
+                photoCounter.textContent =
+                    `${currentPhoto + 1} / ${memories.length}`;
+
+                document
+                    .querySelectorAll(".slider-dot")
+                    .forEach((dot, dotIndex) => {
+
+                        dot.classList.toggle(
+                            "active",
+                            dotIndex === currentPhoto
+                        );
+
+                    });
+
+                memoryImage.classList.remove("changing");
+
+            }, 800);
+
+        }
+
+
+        function nextPhoto() {
+            showPhoto(currentPhoto + 1);
+        }
+
+
+        function previousPhoto() {
+            showPhoto(currentPhoto - 1);
+        }
+
+
+        function resetSlideshow() {
+
+            currentPhoto = 0;
+
+            showPhoto(0);
+        }
+
+
+        createSliderDots();
+
+
+        /* =====================================================
+           TOUCH / SWIPE SLIDESHOW
+        ====================================================== */
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const photoSlider =
+            document.querySelector(".photo-slider");
+
+        photoSlider.addEventListener(
+            "touchstart",
+            function (event) {
+
+                touchStartX =
+                    event.changedTouches[0].screenX;
+
+            },
+            { passive: true }
+        );
+
+
+        photoSlider.addEventListener(
+            "touchend",
+            function (event) {
+
+                touchEndX =
+                    event.changedTouches[0].screenX;
+
+                const distance =
+                    touchEndX - touchStartX;
+
+                if (Math.abs(distance) < 50) {
+                    return;
+                }
+
+                if (distance < 0) {
+                    nextPhoto();
+                } else {
+                    previousPhoto();
+                }
+
+            },
+            { passive: true }
+        );
+
+
+        /* =====================================================
+           KEYBOARD
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (currentPage !== 4) {
+                    return;
+                }
+
+                if (event.key === "ArrowRight") {
+                    nextPhoto();
+                }
+
+                if (event.key === "ArrowLeft") {
+                    previousPhoto();
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           DIGITAL BOOK
+        ====================================================== */
+
+        const bookPages =
+            document.querySelectorAll(".book-page");
+
+        let currentBookPage = 0;
+
+
+        function nextBookPage() {
+
+            if (
+                currentBookPage >=
+                bookPages.length - 1
+            ) {
+                return;
+            }
+
+            const currentPage =
+                bookPages[currentBookPage];
+
+            const nextPage =
+                bookPages[currentBookPage + 1];
+
+            // Tampilkan halaman berikutnya di belakang
+            nextPage.classList.add("active-book");
+
+            // Mulai animasi halaman sekarang
+            currentPage.classList.add("flipping");
+
+            setTimeout(() => {
+
+                currentPage.classList.remove("active-book");
+                currentPage.classList.remove("flipping");
+
+                currentBookPage++;
+
+            }, 1400);
+
+        }
+
+
+        function restartBook() {
+
+            bookPages.forEach(page => {
+                page.classList.remove("active-book");
+            });
+
+            currentBookPage = 0;
+
+            bookPages[0]
+                .classList.add("active-book");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

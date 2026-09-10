@@ -1,0 +1,2093 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    font-family: "Cormorant Garamond", serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff8f8 0%,
+            #f7e8eb 45%,
+            #ead1d8 100%
+        );
+
+    color: #612038;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s ease;
+
+    overflow-y: auto;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   FALLING HEARTS
+========================================================= */
+
+.hearts-container {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+.falling-heart {
+    position: absolute;
+    top: -30px;
+
+    color: rgba(137, 35, 67, 0.35);
+
+    animation:
+        fallHeart linear forwards;
+}
+
+@keyframes fallHeart {
+
+    from {
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   GENERAL TYPOGRAPHY
+========================================================= */
+
+.section-small,
+.opening-small {
+    font-family: "Playfair Display", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #9a6577;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+
+    font-weight: 500;
+
+    color: #612038;
+}
+
+.main-button,
+.secondary-button,
+.book-button,
+.slider-arrow,
+.slider-dot,
+.envelope-wrapper {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.main-button,
+.secondary-button,
+.book-button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: "Playfair Display", serif;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.main-button {
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8a2948,
+            #682039
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(104, 32, 57, 0.25);
+}
+
+.main-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(104, 32, 57, 0.32);
+}
+
+.secondary-button {
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    color: #722640;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 1px solid rgba(114, 38, 64, 0.18);
+}
+
+.secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.page-navigation {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   PAGE 1 - OPENING
+========================================================= */
+
+.page-opening {
+    text-align: center;
+}
+
+.opening-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+}
+
+.opening-content h1 {
+    font-size: clamp(31px, 6vw, 48px);
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope-wrapper {
+    position: relative;
+
+    width: min(360px, 82vw);
+
+    height: 245px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.envelope {
+    position: relative;
+
+    width: 100%;
+    height: 190px;
+
+    filter:
+        drop-shadow(
+            0 20px 30px rgba(74, 20, 39, 0.25)
+        );
+
+    transition:
+        transform 0.5s ease;
+}
+
+.envelope-wrapper:hover .envelope {
+    transform: translateY(-5px);
+}
+
+
+/* envelope back */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9a0ad,
+            #b86b82
+        );
+
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+
+/* letter */
+
+.letter-paper {
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    bottom: 15px;
+
+    height: 155px;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffefa,
+            #f9f1ec
+        );
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 5px 15px rgba(65, 20, 35, 0.18);
+
+    z-index: 2;
+
+    transition:
+        transform 1s ease,
+        bottom 1s ease;
+}
+
+.letter-paper-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid rgba(126, 49, 72, 0.15);
+
+    color: #8b3854;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 28px;
+}
+
+.letter-paper-inner strong {
+    font-family: serif;
+
+    font-size: 22px;
+}
+
+
+/* envelope front */
+
+.envelope-front {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 105px;
+
+    z-index: 4;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c77b90,
+            #a9506b
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 62%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius: 0 0 8px 8px;
+}
+
+
+/* flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 115px;
+
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d999a9,
+            #bd6c83
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin: top center;
+
+    transition:
+        transform 1s ease;
+
+    backface-visibility: hidden;
+}
+
+
+/* seal */
+
+.envelope-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    z-index: 8;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle,
+            #a43d5d,
+            #76233f
+        );
+
+    border: 3px solid rgba(255,255,255,0.45);
+
+    box-shadow:
+        0 5px 15px rgba(75, 20, 40, 0.25);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+/* opened */
+
+.envelope-wrapper.opened .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-wrapper.opened .letter-paper {
+    bottom: 70px;
+
+    transform:
+        translateY(-35px);
+
+    z-index: 6;
+}
+
+.envelope-wrapper.opened .envelope-seal {
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.5);
+}
+
+.envelope-hint {
+    margin-top: 12px;
+
+    color: #895266;
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PAGE 2 - CALENDAR
+========================================================= */
+
+.calendar-section {
+    width: min(600px, 95vw);
+
+    text-align: center;
+}
+
+.calendar-section h1 {
+    font-size: clamp(30px, 5vw, 44px);
+}
+
+.calendar-subtitle {
+    margin-top: 8px;
+    margin-bottom: 25px;
+
+    color: #805166;
+
+    font-size: 18px;
+}
+
+.calendar-card {
+    width: min(440px, 90vw);
+
+    margin: auto;
+
+    padding: 25px;
+
+    background:
+        rgba(255, 253, 249, 0.9);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(70, 20, 40, 0.15);
+
+    border:
+        1px solid rgba(120, 50, 70, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid rgba(100, 30, 50, 0.12);
+
+    font-family: "Playfair Display", serif;
+
+    color: #75243f;
+}
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+}
+
+.calendar-weekdays {
+    margin-top: 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 10px;
+
+    color: #a06d7c;
+}
+
+.calendar-days {
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+.calendar-days span {
+    position: relative;
+
+    aspect-ratio: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    color: #704155;
+
+    border-radius: 50%;
+}
+
+.calendar-days .empty {
+    visibility: hidden;
+}
+
+.calendar-days .special-day {
+    position: relative;
+
+    left: 5px;
+
+    color: #7e2947;
+
+    background: transparent;
+
+    font-weight: 600;
+    
+    z-index: 1;
+}
+.calendar-days .special-day::before {
+    content: "";
+
+    position: absolute;
+
+    width: 36px;
+    height: 36px;
+
+    left: calc(50% - 5px);
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1.5px solid rgba(126, 41, 71, 0.45);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    z-index: -1;
+}
+
+.day-heart {
+    display: none;
+}
+
+.day-heart {
+    position: absolute;
+
+    top: -10px;
+    right: -7px;
+
+    font-size: 18px;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1.3px #8a2948;
+
+    z-index: 2;
+}
+
+.birthday-date {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(100, 30, 50, 0.12);
+}
+
+.birthday-date > span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 38px;
+
+    color: #7e2947;
+}
+
+.birthday-date div {
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.birthday-date small {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #9c6879;
+}
+
+.birthday-date strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 13px;
+
+    color: #712640;
+}
+
+.calendar-section .main-button {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   PAGE 3 - LETTER
+========================================================= */
+
+.letter-section {
+    width: min(780px, 95vw);
+
+    text-align: center;
+}
+
+.letter-card {
+    position: relative;
+
+    width: 100%;
+
+    max-height: 67vh;
+
+    overflow-y: auto;
+
+    padding:
+        35px
+        45px
+        30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefa,
+            #faf0ec
+        );
+
+    border-radius:
+        8px 20px 20px 8px;
+
+    box-shadow:
+        0 20px 60px rgba(60, 15, 35, 0.18);
+
+    text-align: left;
+
+    scrollbar-width: thin;
+}
+
+.letter-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 28px;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        rgba(160, 90, 110, 0.15);
+}
+
+.letter-top {
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #8a3452;
+
+    font-size: 20px;
+}
+
+.typing-area {
+    position: relative;
+
+    padding-left: 15px;
+}
+
+.typing-line {
+    min-height: 1.2em;
+
+    margin-bottom: 10px;
+
+    color: #68394a;
+
+    font-size: clamp(17px, 2vw, 20px);
+
+    line-height: 1.4;
+}
+
+.typing-line:first-child {
+    font-family: "Playfair Display", serif;
+
+    color: #7a2947;
+
+    font-weight: 600;
+}
+
+.typing-line:nth-child(2) {
+    font-family: "Playfair Display", serif;
+
+    color: #8a2948;
+
+    font-size: 21px;
+
+    font-weight: 600;
+}
+
+.typing-active::after {
+    content: "|";
+
+    animation:
+        blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.skip-button {
+    display: inline-flex;
+
+    margin:
+        5px 0 20px 15px;
+
+    padding: 7px 14px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #f1dce2;
+
+    color: #742941;
+
+    font-family: "Playfair Display", serif;
+
+    cursor: pointer;
+}
+
+.letter-bottom {
+    margin-top: 15px;
+
+    text-align: right;
+
+    color: #8b5265;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   PAGE 4 - MEMORIES
+========================================================= */
+
+.memories-section {
+    width: min(850px, 95vw);
+
+    text-align: center;
+}
+
+.memories-section h1 {
+    font-size: clamp(30px, 5vw, 44px);
+}
+
+.memories-subtitle {
+    margin-top: 7px;
+
+    color: #805166;
+
+    font-size: 18px;
+}
+
+.photo-slider {
+    position: relative;
+
+    width: min(650px, 92vw);
+
+    margin: 25px auto 0;
+}
+
+.photo-frame {
+    position: relative;
+
+    width: 100%;
+
+    height: min(48vh, 470px);
+
+    padding: 0;
+
+    background: rgba(255,255,255,0.78);
+
+    border-radius: 14px;
+
+    box-shadow: 0 20px 60px rgba(65, 20, 40, 0.18);
+
+    overflow: hidden;
+}
+
+.photo-frame::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid rgba(125, 50, 75, 0.15);
+
+    border-radius: 8px;
+
+    pointer-events: none;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
+    cursor: pointer;
+
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.photo-frame img.changing {
+    opacity: 0;
+}
+
+.photo-counter {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    z-index: 3;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(80, 20, 40, 0.65);
+
+    color: white;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.memory-info {
+    padding:
+        17px
+        15px
+        5px;
+}
+
+.memory-info h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(23px, 4vw, 30px);
+
+    font-weight: 500;
+
+    color: #68233e;
+}
+
+.memory-divider {
+    margin: 4px 0;
+
+    color: #9c536d;
+
+    font-size: 14px;
+}
+
+.memory-info p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #805166;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+}
+
+.slider-controls {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 12px;
+}
+
+.slider-arrow {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    color: #712640;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(60, 20, 35, 0.12);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.slider-arrow:hover {
+    transform: scale(1.08);
+
+    background: white;
+}
+
+.slider-dots {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.slider-dot {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d2abb7;
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
+}
+
+.slider-dot.active {
+    width: 22px;
+
+    border-radius: 10px;
+
+    background: #7b2947;
+}
+
+
+/* =========================================================
+   PAGE 5 - DIGITAL BOOK
+========================================================= */
+
+.book-container {
+    position: relative;
+
+    width: min(92vw, 550px);
+
+    height: min(82vh, 700px);
+
+    perspective: 1500px;
+}
+
+.book-page {
+    position: absolute;
+
+    transform-origin: left center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    inset: 0;
+
+    padding:
+        50px
+        42px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #f9eee9
+        );
+
+    color: #5f2639;
+
+    border-radius:
+        5px
+        20px
+        20px
+        5px;
+
+    box-shadow:
+        0 25px 70px rgba(55, 0, 20, 0.35);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: rotateY(0deg);
+
+    transition: none;
+    
+    transition:
+        opacity 0.6s ease,
+        transform 0.7s ease,
+        visibility 0.6s ease;
+
+    overflow-y: auto;
+}
+
+.book-page.flipping {
+    animation: pageFlip 1.4s ease-in-out forwards;
+}
+
+@keyframes pageFlip {
+
+    0% {
+        transform:
+            perspective(1500px)
+            rotateY(0deg);
+    }
+
+    100% {
+        transform:
+            perspective(1500px)
+            rotateY(-180deg);
+    }
+
+}
+
+.book-page.active-book {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        rotateY(0)
+        translateX(0);
+
+    z-index: 2;
+}
+
+.book-page::before {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    top: 15px;
+    bottom: 15px;
+
+    width: 1px;
+
+    background:
+        rgba(130, 70, 85, 0.14);
+}
+
+.book-page::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 45px;
+    height: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eadbd4 50%,
+            transparent 50%
+        );
+
+    opacity: 0.6;
+}
+
+
+/* cover */
+
+.book-cover {
+    background:
+        linear-gradient(
+            145deg,
+            #7c2442,
+            #4f172d
+        );
+
+    color: white;
+
+    border-radius:
+        5px
+        20px
+        20px
+        5px;
+}
+
+.book-cover::before {
+    background:
+        rgba(255,255,255,0.16);
+}
+
+.book-cover::after {
+    display: none;
+}
+
+.book-decoration {
+    font-size: 26px;
+
+    margin-bottom: 18px;
+}
+
+.book-small {
+    font-family: "Playfair Display", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.8;
+
+    margin-bottom: 12px;
+}
+
+.book-cover h1 {
+    color: white;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(50px, 9vw, 72px);
+
+    font-weight: 400;
+}
+
+.book-line {
+    width: 100px;
+
+    height: 1px;
+
+    margin: 15px auto;
+
+    background:
+        rgba(255,255,255,0.55);
+}
+
+.book-subtitle {
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+}
+
+.book-date {
+    margin-top: 7px;
+
+    font-size: 15px;
+
+    opacity: 0.75;
+}
+
+.book-heart {
+    margin-top: 25px;
+
+    font-size: 30px;
+
+    animation:
+        softHeart 2.2s ease-in-out infinite;
+}
+
+@keyframes softHeart {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* inside pages */
+
+.chapter {
+    font-family: "Playfair Display", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #a06b7a;
+
+    margin-bottom: 12px;
+}
+
+.book-page h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(25px, 4vw, 34px);
+
+    line-height: 1.15;
+
+    font-weight: 500;
+
+    color: #612038;
+}
+
+.book-divider {
+    margin: 14px 0;
+
+    color: #a05570;
+}
+
+.book-page > p {
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    color: #795064;
+
+    margin-bottom: 12px;
+}
+
+.book-special {
+    font-family: "Playfair Display", serif;
+
+    color: #812441 !important;
+
+    font-size: 21px !important;
+}
+
+.book-highlight {
+    margin-bottom: 15px;
+
+    padding:
+        15px
+        18px;
+
+    border-left:
+        2px solid #a75571;
+
+    background:
+        rgba(245, 224, 229, 0.5);
+
+    border-radius: 0 10px 10px 0;
+}
+
+.book-highlight p {
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+
+    color: #722640;
+}
+
+.book-page-number {
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #ad8491;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.book-button {
+    align-self: center;
+
+    margin-top: 15px;
+
+    padding:
+        10px
+        20px;
+
+    border-radius: 25px;
+
+    background:
+        #76243f;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(90, 25, 50, 0.2);
+}
+
+.book-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FINAL BOOK PAGE
+========================================================= */
+
+.final-book-page {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        45px
+        40px
+        65px;
+}
+
+.final-book-content {
+    width: 100%;
+
+    max-width: 430px;
+
+    text-align: center;
+
+    position: relative;
+
+    transform: translateY(18px);
+}
+
+.final-book-heart {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+
+    animation:
+        softHeart 2.2s ease-in-out infinite;
+}
+
+.final-book-page h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(27px, 4.5vw, 37px);
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    color: #612038;
+
+    margin: 0;
+}
+
+.final-book-page p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(17px, 2.2vw, 20px);
+
+    line-height: 1.38;
+
+    color: #795064;
+
+    margin-bottom: 12px;
+}
+
+.final-book-page .big-book-text {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(25px, 4vw, 32px);
+
+    color: #812441;
+
+    margin:
+        3px 0 17px;
+
+    font-weight: 500;
+}
+
+.final-book-page .forever {
+    margin-top: 13px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    font-style: italic;
+
+    color: #862441;
+}
+
+.final-book-page .book-button {
+    margin-top: 17px;
+}
+
+.final-book-page .book-page-number {
+    position: absolute;
+
+    left: 0;
+    bottom: 20px;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .page {
+        padding: 18px;
+    }
+
+    .opening-content h1 {
+        margin-bottom: 25px;
+    }
+
+    .envelope-wrapper {
+        width: min(330px, 88vw);
+    }
+
+    .letter-card {
+        max-height: 65vh;
+
+        padding:
+            28px
+            28px
+            25px;
+    }
+
+    .photo-frame {
+        height: min(44vh, 410px);
+    }
+
+    .book-container {
+        height: min(82vh, 650px);
+    }
+
+    .book-page {
+        padding:
+            40px
+            32px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding:
+            15px
+            12px;
+    }
+
+
+    /* opening */
+
+    .opening-small {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .opening-content h1 {
+        font-size: 31px;
+
+        margin-bottom: 20px;
+    }
+
+    .envelope-wrapper {
+        width: 300px;
+        max-width: 88vw;
+
+        height: 220px;
+    }
+
+    .envelope {
+        height: 165px;
+    }
+
+    .letter-paper {
+        height: 135px;
+    }
+
+    .envelope-flap {
+        height: 100px;
+    }
+
+    .envelope-front {
+        height: 92px;
+    }
+
+    .envelope-seal {
+        width: 44px;
+        height: 44px;
+    }
+
+    .envelope-wrapper.opened .letter-paper {
+        bottom: 58px;
+    }
+
+
+    /* calendar */
+
+    .calendar-section h1 {
+        font-size: 31px;
+    }
+
+    .calendar-subtitle {
+        font-size: 16px;
+
+        margin-bottom: 18px;
+    }
+
+    .calendar-card {
+        padding: 17px;
+
+        border-radius: 15px;
+    }
+
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .calendar-days span {
+        font-size: 15px;
+    }
+
+    .birthday-date {
+        margin-top: 15px;
+    }
+
+
+    /* letter */
+
+    .letter-section {
+        width: 100%;
+    }
+
+    .letter-card {
+        max-height: 67vh;
+
+        padding:
+            25px
+            20px
+            22px;
+    }
+
+    .letter-card::before {
+        left: 15px;
+    }
+
+    .typing-area {
+        padding-left: 8px;
+    }
+
+    .typing-line {
+        font-size: 16px;
+
+        line-height: 1.35;
+
+        margin-bottom: 9px;
+    }
+
+    .typing-line:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .letter-bottom {
+        font-size: 23px;
+    }
+
+
+    /* memories */
+
+    .memories-section {
+        width: 100%;
+    }
+
+    .memories-section h1 {
+        font-size: 30px;
+    }
+
+    .memories-subtitle {
+        font-size: 16px;
+
+        margin-bottom: 3px;
+    }
+
+    .photo-slider {
+        width: 100%;
+
+        margin-top: 17px;
+    }
+
+    .photo-frame {
+        height: min(48vh, 390px);
+
+        padding: 8px;
+
+        border-radius: 12px;
+    }
+
+    .photo-frame::after {
+        inset: 8px;
+    }
+
+    .photo-counter {
+        top: 17px;
+        right: 17px;
+
+        padding: 5px 10px;
+
+        font-size: 10px;
+    }
+
+    .memory-info {
+        padding-top: 12px;
+    }
+
+    .memory-info h2 {
+        font-size: 23px;
+    }
+
+    .memory-divider {
+        margin: 2px 0;
+    }
+
+    .memory-info p {
+        font-size: 16px;
+
+        line-height: 1.25;
+
+        padding: 0 5px;
+    }
+
+    .slider-controls {
+        gap: 12px;
+
+        margin-top: 9px;
+    }
+
+    .slider-arrow {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .slider-dots {
+        gap: 5px;
+    }
+
+    .slider-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .slider-dot.active {
+        width: 18px;
+    }
+
+
+    /* book */
+
+    .book-container {
+        width: 94vw;
+
+        height: 82dvh;
+
+        max-height: 680px;
+    }
+
+    .book-page {
+        padding:
+            35px
+            25px
+            55px;
+
+        border-radius:
+            4px
+            16px
+            16px
+            4px;
+    }
+
+    .book-page h2 {
+        font-size: 25px;
+    }
+
+    .book-page > p {
+        font-size: 17px;
+
+        line-height: 1.32;
+
+        margin-bottom: 9px;
+    }
+
+    .book-highlight {
+        padding:
+            12px
+            14px;
+
+        margin-bottom: 12px;
+    }
+
+    .book-highlight p {
+        font-size: 17px;
+    }
+
+    .book-special {
+        font-size: 19px !important;
+    }
+
+    .book-button {
+        font-size: 13px;
+
+        padding:
+            9px
+            17px;
+
+        margin-top: 10px;
+    }
+
+
+    /* final page */
+
+    .final-book-page {
+        padding:
+            35px
+            25px
+            55px;
+    }
+
+    .final-book-content {
+        max-width: 100%;
+
+        transform:
+            translateY(10px);
+    }
+
+    .final-book-heart {
+        font-size: 25px;
+
+        margin-bottom: 9px;
+    }
+
+    .final-book-page h2 {
+        font-size: 26px;
+
+        line-height: 1.08;
+    }
+
+    .final-book-page .book-divider {
+        margin: 11px 0;
+    }
+
+    .final-book-page .big-book-text {
+        font-size: 24px;
+
+        line-height: 1.15;
+
+        margin:
+            2px 0 14px;
+    }
+
+    .final-book-page p {
+        font-size: 16.5px;
+
+        line-height: 1.32;
+
+        margin-bottom: 8px;
+    }
+
+    .final-book-page .forever {
+        font-size: 20px;
+
+        margin-top: 9px;
+    }
+
+    .final-book-page .book-button {
+        margin-top: 12px;
+    }
+
+    .final-book-page .book-page-number {
+        bottom: 15px;
+
+        font-size: 11px;
+    }
+
+
+    /* navigation */
+
+    .page-navigation {
+        margin-top: 15px;
+
+        gap: 8px;
+    }
+
+    .main-button,
+    .secondary-button {
+        font-size: 12px;
+
+        padding:
+            10px
+            16px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .page {
+        padding:
+            10px;
+    }
+
+    .opening-content h1 {
+        font-size: 28px;
+    }
+
+    .envelope-wrapper {
+        width: 275px;
+    }
+
+
+    .calendar-card {
+        padding: 14px;
+    }
+
+    .calendar-days span {
+        font-size: 13px;
+    }
+
+
+    .letter-card {
+        max-height: 68vh;
+
+        padding:
+            22px
+            17px
+            20px;
+    }
+
+    .typing-line {
+        font-size: 15px;
+    }
+
+
+    .photo-frame {
+        height: 350px;
+    }
+
+    .memory-info h2 {
+        font-size: 21px;
+    }
+
+    .memory-info p {
+        font-size: 15px;
+    }
+
+
+    .book-container {
+        height: 84dvh;
+    }
+
+    .book-page {
+        padding:
+            28px
+            20px
+            50px;
+    }
+
+    .book-page h2 {
+        font-size: 22px;
+    }
+
+    .book-page > p {
+        font-size: 15.5px;
+    }
+
+    .book-highlight p {
+        font-size: 15.5px;
+    }
+
+
+    .final-book-page {
+        padding:
+            28px
+            20px
+            50px;
+    }
+
+    .final-book-content {
+        transform:
+            translateY(5px);
+    }
+
+    .final-book-page h2 {
+        font-size: 23px;
+    }
+
+    .final-book-page .big-book-text {
+        font-size: 21px;
+    }
+
+    .final-book-page p {
+        font-size: 15.5px;
+    }
+
+    .final-book-page .forever {
+        font-size: 19px;
+    }
+
+}
